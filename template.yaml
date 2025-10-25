@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Template to create an S3 bucket
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Name for the S3 bucket
+    AllowedPattern: '^[a-z0-9][a-z0-9.-]*[a-z0-9]$'
+    ConstraintDescription: Bucket name must contain only lowercase letters, numbers, dots, and hyphens
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Delete
+    Properties:
+      BucketName: !Ref BucketName
+      VersioningConfiguration:
+        Status: Enabled
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+Outputs:
+  BucketName:
+    Description: Name of the created bucket
+    Value: !Ref S3Bucket
+  BucketARN:
+    Description: ARN of the created bucket
+    Value: !GetAtt S3Bucket.Arn
