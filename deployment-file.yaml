@@ -1,0 +1,9 @@
+template-file-path: ./template.yaml
+
+parameters:
+  BucketName: my-unique-bucket-name-12345
+
+tags:
+  Environment: Production
+  CostCenter: '123456'
+  Owner: YourName
