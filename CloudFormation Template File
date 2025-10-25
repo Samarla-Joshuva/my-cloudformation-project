@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: "2025-10-25"
+
+Description: Just trail of aws cloudformation-project
+
+Parameters:
+  # Input values that users can customize
+
+Mappings:
+  # Lookup tables (optional)
+
+Conditions:
+  # Conditional logic (optional)
+
+Resources:
+  # AWS resources to create (REQUIRED)
+
+Outputs:
+  # Values to display after stack creation
